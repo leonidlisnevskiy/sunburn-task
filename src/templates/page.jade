@@ -1,0 +1,95 @@
+---
+title: SunBurn test task
+---
+
+extends layouts/_layout
+block content
+	include ./partials/_header
+
+	-
+		var titles = [
+		{titleName: 'Главная'},
+		{titleName: 'Каталог'},
+		{titleName: 'Доставка и оплата'},
+		{titleName: 'Прайс-лист'},
+		{titleName: 'Контакты'}
+		]
+	nav.nav
+		ul.menu.menu_nav
+			each item in titles
+				li.menu__item
+					a.menu__link(href="#")
+						=item.titleName
+
+	// BEGIN .breadcrumb
+	-
+		var breadcrumbs = [
+		{breadcrumb: 'Главная'},
+		{breadcrumb: 'Каталог'},
+		{breadcrumb: 'Бытовая техника'}
+		]
+	.breadcrumb
+		.inner
+			ul(class="breadcrumbs")
+				each item in breadcrumbs
+					li(class="breadcrumbs__item")
+						a(class="breadcrumbs__link", href="#")= item.breadcrumb
+	// END .breadcrumb
+
+	// BEGIN .content
+	.content
+		.inner
+			include ./partials/_sidebar
+			.content__container
+				-
+					var items = [
+					{price: '1 900 р.', text: 'Самый клевый чайник, который надо купить!', img: '../img/nophoto.png'},
+					{price: '1 900 р.', text: 'Самый клевый чайник, который надо купить!', img: '../img/nophoto.png'},
+					{price: '1 900 р.', text: 'Самый клевый чайник, который надо купить!', img: '../img/nophoto.png'},
+					{price: '1 900 р.', text: 'Самый клевый чайник, который надо купить!', img: '../img/nophoto.png'},
+					{price: '1 900 р.', text: 'Самый клевый чайник, который надо купить!', img: '../img/nophoto.png'}
+					]
+				// BEGIN .items
+				.items
+					each item in items
+						.item
+							.item__inner
+								.item__img
+									img(src=(item.img))
+								.item__text
+									=item.text
+								.item__controls
+									.item__price= item.price
+									a(class="item__basket", href="#")
+										+iconPng('basket', 'item__basket-icon')
+				// END .items
+
+				// BEGIN .pagination
+				ul.pagination
+					li.pagination__item
+						a.pagination__link(href="#") 1
+					li.pagination__item
+						a.pagination__link(href="#") 2
+					li.pagination__item
+						a(class="pagination__link is-current", href="#") 3
+					li.pagination__item
+						a.pagination__link(href="#") 4
+					li.pagination__item
+						a.pagination__link(href="#") 5
+					li.pagination__item
+						a.pagination__link(href="#") 6
+					li.pagination__item
+						a.pagination__link(href="#") 7
+				// END .pagination
+
+				// BEGIN .text
+				.text
+					.text__row
+						.text__col
+							p Компания «Пиксель Плюс» существует более 6 лет, за это время мы принимали участие в разработке более чем 700 сайтов, поэтому можем уверенно называть себя профессионалами. На данный момент наш коллектив состоит из более чем 30 сотрудников работающих в двух офисах в Москве и Зеленограде.характерные для этого жанра мотивы: неразделённой любви, ухода молодости, угасания души.
+						.text__col
+							p Одним из основных направлений работ нашей компании является поисковое продвижение сайтов, на данной момент мы работаем с более чем 150 постоянными клиентами по более чем 11 000 поисковым запросам. При этом в работе основной акцент мы делаем на качестве работ, а так же применяем собственные уникальные разработки в области SEO продвижения. На данный момент отдел SEO состоит из 9 человек под руководством ведущего специалиста, преимущественно работающих в нашем московском офисе.
+				// END .text
+	// END .content
+
+	include ./partials/_footer

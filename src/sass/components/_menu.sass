@@ -1,0 +1,46 @@
+.menu
+	font-size: 0
+	&__item
+		display: inline-block
+	&__link
+		text-decoration: none
+	&.menu_nav
+		background-color: $grayDark
+		text-align: center
+		.menu__item
+			&:not(:last-child)
+				.menu__link:after
+					content: ''
+					display: block
+					position: absolute
+					width: 3px
+					height: 25px
+					right: 0
+					top: 50%
+					transform: translateY(-50%)
+					background-color: $white
+		.menu__link
+			font-size: 30px
+			color: $white
+			font-weight: 400
+			padding: 26px 20px
+			position: relative
+			display: inline-block
+			vertical-align: top
+			line-height: 1
+		.menu__link:hover
+			text-decoration: underline
+	&.menu_footer
+			.menu__item
+				display: block
+				&:not(:last-child)
+					margin-bottom: 10px
+			.menu__link
+				text-decoration: underline
+				font-size: $base
+				color: $white
+				font-weight: 400
+				position: relative
+				display: inline-block
+				vertical-align: top
+				line-height: 1

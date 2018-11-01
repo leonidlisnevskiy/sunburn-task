@@ -1,0 +1,49 @@
+.footer
+	padding: 50px 0
+	background-color: $grayDark
+	&_logo
+		+clr
+		margin-left: auto
+		max-width: 220px
+		&-icon
+			margin-right: 10px
+			float: left
+		&-title
+			line-height: 1.375
+			font-size: $base
+			color: $white
+			display: inline-block
+			vertical-align: top
+			position: relative
+			&:after
+				content: ''
+				position: absolute
+				top: 50%
+				right: -19px
+				transform: translateX(-50%)
+				width: 9px
+				height: 1px
+				background-color: $white
+		&-meta
+			color: currentColor
+			color: $white
+			font-size: $base
+			margin-left: 5px
+			display: block
+	&__copy
+		font-size: $base
+		color: $white
+		line-height: 1.375
+		font-weight: 400
+		a
+			color: $white
+			text-decoration: none
+			display: block
+		a:hover
+			text-decoration: underline
+	.col
+		width: 33.3333%
+		display: inline-block
+		vertical-align: top
+	.row
+		font-size: 0

@@ -1,0 +1,65 @@
+.sidebar
+	display: inline-block
+	height: 100%
+	min-height: 100%
+	float: left
+	&__content
+		font-size: 0
+	&_logo
+		font-size: 0
+		text-align: center
+		margin-top: 110px
+	&_logo-icon
+		display: block
+		margin: 0 auto
+	&_logo-title
+		font-size: 30px
+		letter-spacing: 0.025em
+		line-height: 0.83
+		color: $grayMid
+		text-decoration: none
+		margin-top: 5px
+		display: block
+.menu_sidebar
+	.menu
+		&__item
+			display: block
+			&.is-active
+				.menu__link
+					text-decoration: underline
+				.menu__submenu
+					.menu__link
+						text-decoration: none
+			.menu__submenu
+				padding-left: 20px
+				.menu__item
+					position: relative
+					&:before
+						content: ''
+						position: absolute
+						top: 50%
+						transform: translateY(-50%)
+						left: -11px
+						width: 5px
+						height: 5px
+						background-color: $grayLink
+						border-radius: 50px
+					&:not(:last-child)
+						margin-bottom: 5px
+				.menu__link
+					color: $grayLink
+					font-size: $base
+					transition: color .24s ease-in-out
+				.menu__link.is-active,
+				.menu__link:hover
+					color: $black
+					text-decoration: underline
+		&__link
+			display: block
+			text-decoration: none
+			font-size: $base
+			line-height: 30px
+			letter-spacing: 0.025em
+			color: $grayLink
+		&__link.is-active
+			text-decoration: underline

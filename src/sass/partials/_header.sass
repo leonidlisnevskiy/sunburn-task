@@ -1,0 +1,48 @@
+.header
+	background-color: $headerBg
+	padding: 45px 0 65px
+	&__logo
+		display: inline-block
+		font-size: 0
+		max-width: 310px
+		margin-top: 20px
+		+clr
+		&-icon
+			float: left
+			width: 100px
+			height: 100px
+			margin-right: 13px
+			background-color: $grayDark
+	&__title,
+	&__meta
+		color: $grayDark
+		line-height: 22px
+		display: inline-block
+		vertical-align: top
+	&__title
+		font-size: $font-lg
+		margin-top: 8px
+	&__meta
+		font-size: $font-md
+		margin-top: 20px
+	&__info
+		float: right
+	&__links
+		text-align: right
+	&__link
+		display: block
+		font-size: 40px
+		font-weight: 100
+		text-decoration: none
+		color: $grayLink
+		line-height: 1.15
+		font-family: $opensans
+		cursor: pointer
+		&_feedback
+			border-bottom: 2px dashed $grayDark
+			font-size: 24px
+			font-family: $ptsans
+			display: inline-block
+			font-weight: 700
+			line-height: 1
+			margin-top: 10px

@@ -1,0 +1,26 @@
+// BEGIN .sidebar
+aside(class="sidebar")
+	.sidebar__content
+		-
+			var asideMenu = [
+			{asideLink: 'Автомобили'},
+			{asideLink: 'Бытовая техника', sublinks: ['Микроволновки', 'Холодильники', 'Посудомоечные машины', 'Чайники'], active: true},
+			{asideLink: 'Мобильная техника'},
+			{asideLink: 'Компьютеры'},
+			{asideLink: 'Одежда'},
+			{asideLink: 'Недвижимость'}
+			]
+		ul.menu.menu_sidebar
+			each item in asideMenu
+				li.menu__item(class= (item.active === true ? "is-active" : undefined))
+					a.menu__link(href="#")
+						=item.asideLink
+					if item.sublinks
+						ul.menu__submenu
+							each subMenu in item.sublinks
+								li.menu__item
+									a(href="#" class="menu__link")= subMenu
+		.logo.sidebar_logo
+			+iconPng('exel', 'sidebar_logo-icon')
+			a(class="sidebar_logo-title", href="#") Прайс-лист
+// END .sidebar
