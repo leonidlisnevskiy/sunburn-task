@@ -6,41 +6,23 @@ extends layouts/_layout
 block content
 	include ./partials/_header
 
-	-
-		var titles = [
-		{titleName: 'Главная'},
-		{titleName: 'Каталог'},
-		{titleName: 'Доставка и оплата'},
-		{titleName: 'Прайс-лист'},
-		{titleName: 'Контакты'}
-		]
-	nav.nav
-		ul.menu.menu_nav
-			each item in titles
-				li.menu__item
-					a.menu__link(href="#")
-						=item.titleName
-
-	// BEGIN .breadcrumb
-	-
-		var breadcrumbs = [
-		{breadcrumb: 'Главная'},
-		{breadcrumb: 'Каталог'},
-		{breadcrumb: 'Бытовая техника'}
-		]
-	.breadcrumb
+	// BEGIN .content
+	.content
 		.inner
+			-
+				var breadcrumbs = [
+				{breadcrumb: 'Главная'},
+				{breadcrumb: 'Каталог'},
+				{breadcrumb: 'Бытовая техника'}
+				]
 			ul(class="breadcrumbs")
 				each item in breadcrumbs
 					li(class="breadcrumbs__item")
 						a(class="breadcrumbs__link", href="#")= item.breadcrumb
-	// END .breadcrumb
 
-	// BEGIN .content
-	.content
-		.inner
 			include ./partials/_sidebar
-			.content__container
+			// BEGIN .container
+			.container
 				-
 					var items = [
 					{price: '1 900 р.', text: 'Самый клевый чайник, который надо купить!', img: '../img/nophoto.png'},
@@ -90,6 +72,7 @@ block content
 						.text__col
 							p Одним из основных направлений работ нашей компании является поисковое продвижение сайтов, на данной момент мы работаем с более чем 150 постоянными клиентами по более чем 11 000 поисковым запросам. При этом в работе основной акцент мы делаем на качестве работ, а так же применяем собственные уникальные разработки в области SEO продвижения. На данный момент отдел SEO состоит из 9 человек под руководством ведущего специалиста, преимущественно работающих в нашем московском офисе.
 				// END .text
+			// END .container
 	// END .content
 
 	include ./partials/_footer
