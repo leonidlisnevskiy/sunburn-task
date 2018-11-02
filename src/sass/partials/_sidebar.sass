@@ -1,12 +1,23 @@
 .sidebar
 	float: left
 	width: 185px
+	+sm
+		display: flex
+		float: none
+		width: auto
 	&__content
 		font-size: 0
+		+sm
+			display: flex
+			width: 100%
+			align-items: center
+			justify-content: space-between
 	&_logo
 		font-size: 0
 		text-align: center
 		margin-top: 110px
+		+sm
+			margin-top: 0
 	&_logo-icon
 		display: block
 		margin: 0 auto
@@ -16,9 +27,12 @@
 		line-height: 0.83
 		color: $grayMid
 		text-decoration: none
+		font-weight: 700
 		margin-top: 5px
 		display: block
 .menu_sidebar
+	+sm
+		display: inline-block
 	.menu
 		&__item
 			display: block
@@ -28,6 +42,7 @@
 				.menu__submenu
 					.menu__link
 						text-decoration: none
+						line-height: inherit
 			.menu__submenu
 				padding-left: 20px
 				.menu__item

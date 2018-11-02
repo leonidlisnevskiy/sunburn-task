@@ -8,6 +8,8 @@
 		background-color: $grayDark
 		text-align: center
 		.menu__item
+			+xs
+				display: block
 			&:not(:last-child)
 				.menu__link:after
 					content: ''
@@ -19,6 +21,8 @@
 					top: 50%
 					transform: translateY(-50%)
 					background-color: $white
+					+xs
+						display: none
 		.menu__link
 			font-size: 30px
 			color: $white
@@ -28,6 +32,15 @@
 			display: inline-block
 			vertical-align: top
 			line-height: 1
+			+md
+				font-size: 24px
+			+r(992)
+				font-size: 18px
+			+sm
+				padding: 18px 14px
+			+xs
+				display: block
+				border-bottom: 1px solid $gray
 		.menu__link:hover
 			text-decoration: underline
 	&.menu_footer
@@ -43,7 +56,7 @@
 				position: relative
 				display: inline-block
 				vertical-align: top
-				line-height: 1
+				line-height: 1.2
 
 .nav
 	z-index: 1000

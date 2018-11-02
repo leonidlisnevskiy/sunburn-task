@@ -4,6 +4,12 @@
 	border-bottom: 1px solid $grayLink
 	font-size: 0
 	text-align: center
+	+md
+		margin-bottom: 10px
+	+xs
+		padding-bottom: 40px
+	+r(480)
+		padding-bottom: 20px
 	&__item
 		display: inline-block
 		margin: 0 10px
@@ -11,6 +17,8 @@
 		text-decoration: none
 		cursor: pointer
 		font-size: $base
+		line-height: 22px
+		display: block
 		color: $grayLink
 		&.is-current
 			font-size: $font-md

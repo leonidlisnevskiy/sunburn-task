@@ -3,13 +3,30 @@
 	background-color: $grayDark
 	margin-top: -208px
 	height: 208px
+	+xs
+		height: 268px
+		margin-top: -268px
+	+r(480)
+		height: 385px
+		margin-top: -385px
+		text-align: center
+		padding: 25px 0px
 	&_logo
 		+clr
 		margin-left: auto
 		max-width: 220px
+		+r(480)
+			margin: 20px auto 0
+			padding-top: 20px
+			border-top: 1px solid $gray
+			max-width: 100%
 		&-icon
 			margin-right: 10px
 			float: left
+			+r(480)
+				float: none
+				display: block
+				margin: 0 auto 10px
 		&-title
 			line-height: 1.375
 			font-size: $base
@@ -32,6 +49,8 @@
 			font-size: $base
 			margin-left: 5px
 			display: block
+			+r(480)
+				margin-left: 0
 	&__copy
 		font-size: $base
 		color: $white
@@ -47,5 +66,16 @@
 		width: 33.3333%
 		display: inline-block
 		vertical-align: top
+		+xs
+			width: 50%
+		+r(480)
+			width: 100%
+		&.col_copy
+			float: left
+			+xs
+				width: 100%
+				margin-top: 20px
+				padding-top: 20px
+				border-top: 1px solid $gray
 	.row
 		font-size: 0

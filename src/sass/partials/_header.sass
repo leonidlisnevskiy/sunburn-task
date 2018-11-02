@@ -1,19 +1,21 @@
 .header
 	background-color: $headerBg
 	padding: 45px 0 65px
+	+sm
+		padding: 24px 0
+	+xs
+		text-align: center
 	&__logo
 		display: inline-block
 		font-size: 0
 		max-width: 310px
 		padding-top: 20px
 		padding-bottom: 7px
-		+clr
+		+sm
+			margin-bottom: 24px
 		&-icon
-			float: left
-			width: 100px
+			width: 273px
 			height: 100px
-			margin-right: 13px
-			background-color: $grayDark
 	&__title,
 	&__meta
 		color: $grayDark
@@ -29,6 +31,9 @@
 	&__info
 		float: right
 		text-align: right
+		+xs
+			float: none
+			text-align: center
 	&__link
 		display: block
 		font-size: 40px
@@ -38,6 +43,8 @@
 		line-height: 1.15
 		font-family: $opensans
 		cursor: pointer
+		+xs
+			font-size: 30px
 		&_feedback
 			border-bottom: 2px dashed $grayDark
 			font-size: 24px
