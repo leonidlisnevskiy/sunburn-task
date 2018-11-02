@@ -6,6 +6,25 @@ extends layouts/_layout
 block content
 	include ./partials/_header
 
+	// BEGIN .slider
+	.slider
+		.inner.slider__inner
+			.js-slider-btns
+		.js-slider
+			.item
+				.item__img
+					img(src="img/slide-1.png")
+			.item
+				.item__img
+					img(src="img/slide-2.png")
+			.item
+				.item__img
+					img(src="img/slide-1.png")
+			.item
+				.item__img
+					img(src="img/slide-1.png")
+	// END .slider
+
 	// BEGIN .content
 	.content
 		.inner
