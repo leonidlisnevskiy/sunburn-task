@@ -7,7 +7,7 @@ header(class="header")
 		.header__info
 			a(class="header__link" href="tel:+74997777777") +7(499) 777-77-77
 			a(class="header__link" href="tel:+74997777777") +7(499) 777-77-77
-			a(class="header__link header__link_feedback") Обратная связь
+			a(class="header__link header__link_feedback js-modal-control", data-target="feedback") Обратная связь
 // END .header
 
 -
@@ -26,3 +26,25 @@ nav.nav
 				a.menu__link(href="#")
 					=item.titleName
 // END .nav
+
+.popup(class="js-modal is-open", data-modal="feedback")
+	.popup__inner(class="js-modal-prevent")
+		button(class="popup__close js-modal-control", data-target="feedback", type="button")
+			+iconPng('close')
+
+		.popup__title Обратная связь
+		form.form(action="/")
+			.form-control
+				label.label Ваше имя *
+				input.input(type="text")
+			.form-control
+				label.label Телефон *
+				input.input(type="tel")
+			.form-control
+				label.label Email *
+				input.input(type="text", placeholder="Поле обязательно для заполнения", class="is-error")
+			.form-control
+				label.label Сообщение
+				textarea.textarea(rows="9")
+			.form__buttons
+				button.btn(type="submit") ОТПРАВИТЬ

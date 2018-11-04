@@ -15,7 +15,7 @@
       <!-- BEGIN .header-->
       <header class="header">
         <div class="inner"><a href="#" class="header__logo"><img src="img/logo.png" alt="Logo Company Name" class="logo header__logo-icon"></a>
-          <div class="header__info"><a href="tel:+74997777777" class="header__link">+7(499) 777-77-77</a><a href="tel:+74997777777" class="header__link">+7(499) 777-77-77</a><a class="header__link header__link_feedback">Обратная связь</a></div>
+          <div class="header__info"><a href="tel:+74997777777" class="header__link">+7(499) 777-77-77</a><a href="tel:+74997777777" class="header__link">+7(499) 777-77-77</a><a data-target="feedback" class="header__link header__link_feedback js-modal-control">Обратная связь</a></div>
         </div>
       </header><!-- END .header-->
       <!-- BEGIN .nav-->
@@ -28,7 +28,18 @@
           <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
         </ul>
       </nav><!-- END .nav-->
-      <!-- BEGIN .slider-->
+      <div data-modal="feedback" class="popup js-modal is-open">
+        <div class="popup__inner js-modal-prevent"><button data-target="feedback" type="button" class="popup__close js-modal-control"><i class="icon-close"></i></button>
+          <div class="popup__title">Обратная связь</div>
+          <form action="/" class="form">
+            <div class="form-control"><label class="label">Ваше имя *</label><input type="text" class="input"></div>
+            <div class="form-control"><label class="label">Телефон *</label><input type="tel" class="input"></div>
+            <div class="form-control"><label class="label">Email *</label><input type="text" placeholder="Поле обязательно для заполнения" class="input is-error"></div>
+            <div class="form-control"><label class="label">Сообщение</label><textarea rows="9" class="textarea"></textarea></div>
+            <div class="form__buttons"><button type="submit" class="btn">ОТПРАВИТЬ</button></div>
+          </form>
+        </div>
+      </div><!-- BEGIN .slider-->
       <div class="slider">
         <div class="inner slider__inner">
           <div class="js-slider-btns"></div>
