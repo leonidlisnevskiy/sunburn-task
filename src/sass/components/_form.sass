@@ -1,0 +1,22 @@
+.form
+	&-control
+		font-size: 0
+		&:not(:last-child)
+			margin-bottom: 20px
+	&__buttons
+		text-align: center
+		.btn
+			font-size: 17.77px
+			color: $white
+			background-color: $grayDark
+			font-weight: 700
+			padding: 13px 16px
+			line-height: 1
+			text-transform: uppercase
+			transition: background-color .24s ease-in-out
+			&:hover
+				background-color: lighten($black, 10)
+	.input
+		width: 100%
+		+placeholder
+			font-family: $ptsans

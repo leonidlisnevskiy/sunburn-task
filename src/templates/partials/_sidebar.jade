@@ -20,7 +20,7 @@ aside(class="sidebar")
 							each subMenu in item.sublinks
 								li.menu__item
 									a(href="#" class="menu__link")= subMenu
-		.logo.sidebar_logo
+		a.logo.sidebar_logo(href="#")
 			+iconPng('exel', 'sidebar_logo-icon')
-			a(class="sidebar_logo-title", href="#") Прайс-лист
+			span(class="sidebar_logo-title") Прайс-лист
 // END .sidebar

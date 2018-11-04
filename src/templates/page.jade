@@ -13,16 +13,16 @@ block content
 		.js-slider.slider__container
 			.item
 				.item__img
-					img(src="img/slide-1.png")
+					img(src="img/slide-1.png", alt="Slider image")
 			.item
 				.item__img
-					img(src="img/slide-2.png")
+					img(src="img/slide-2.png", alt="Slider image")
 			.item
 				.item__img
-					img(src="img/slide-1.png")
+					img(src="img/slide-1.png", alt="Slider image")
 			.item
 				.item__img
-					img(src="img/slide-1.png")
+					img(src="img/slide-1.png", alt="Slider image")
 	// END .slider
 
 	// BEGIN .content
@@ -55,12 +55,12 @@ block content
 					each item in items
 						.item
 							.item__inner
-								.item__img
-									img(src=(item.img))
-								.item__text
+								a.item__img(href="#")
+									img(src=(item.img), alt="product image")
+								a.item__text(href="#")
 									=item.text
 								.item__controls
-									.item__price= item.price
+									a.item__price(href="#")= item.price
 									a(class="item__basket", href="#")
 										+iconPng('basket', 'item__basket-icon')
 				// END .items
