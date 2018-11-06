@@ -11,18 +11,18 @@ block content
 		.inner.slider__inner
 			.js-slider-btns
 		.js-slider.slider__container
-			.item
-				.item__img
-					img(src="img/slide-1.png", alt="Slider image")
-			.item
-				.item__img
-					img(src="img/slide-2.png", alt="Slider image")
-			.item
-				.item__img
-					img(src="img/slide-1.png", alt="Slider image")
-			.item
-				.item__img
-					img(src="img/slide-1.png", alt="Slider image")
+			-
+				var slides = [
+				{image: 'img/slide-1.png'},
+				{image: 'img/slide-2.png'},
+				{image: 'img/slide-1.png'},
+				{image: 'img/slide-2.png'},
+				{image: 'img/slide-1.png'}
+				]
+			each item in slides
+				.item
+					.item__img
+						img(src=(item.image), alt="Slider image")
 	// END .slider
 
 	// BEGIN .content
@@ -67,20 +67,22 @@ block content
 
 				// BEGIN .pagination
 				ul.pagination
-					li.pagination__item
-						a.pagination__link(href="#") 1
-					li.pagination__item
-						a.pagination__link(href="#") 2
-					li.pagination__item
-						a(class="pagination__link is-current", href="#") 3
-					li.pagination__item
-						a.pagination__link(href="#") 4
-					li.pagination__item
-						a.pagination__link(href="#") 5
-					li.pagination__item
-						a.pagination__link(href="#") 6
-					li.pagination__item
-						a.pagination__link(href="#") 7
+					-
+						var pagination = [
+						{text: '1'},
+						{text: '2'},
+						{
+							text: '3',
+							active: true
+						},
+						{text: '4'},
+						{text: '5'},
+						{text: '6'},
+						{text: '7'}
+						]
+					each item in pagination
+						li.pagination__item
+							a.pagination__link(href="#", class= (item.active === true ? "is-current" : undefined))= item.text
 				// END .pagination
 
 				// BEGIN .text

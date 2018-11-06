@@ -3,23 +3,32 @@ aside(class="sidebar")
 	.sidebar__content
 		-
 			var asideMenu = [
-			{asideLink: 'Автомобили'},
-			{asideLink: 'Бытовая техника', sublinks: ['Микроволновки', 'Холодильники', 'Посудомоечные машины', 'Чайники'], active: true},
-			{asideLink: 'Мобильная техника'},
-			{asideLink: 'Компьютеры'},
-			{asideLink: 'Одежда'},
-			{asideLink: 'Недвижимость'}
+			{text: 'Автомобили'},
+			{
+				text: 'Бытовая техника',
+				sublinks: [
+					'Микроволновки',
+					'Холодильники',
+					'Посудомоечные машины',
+					'Чайники'
+				],
+				active: true
+			},
+			{text: 'Мобильная техника'},
+			{text: 'Компьютеры'},
+			{text: 'Одежда'},
+			{text: 'Недвижимость'}
 			]
 		ul.menu.menu_sidebar
 			each item in asideMenu
 				li.menu__item(class= (item.active === true ? "is-active" : undefined))
 					a.menu__link(href="#")
-						=item.asideLink
+						=item.text
 					if item.sublinks
 						ul.menu__submenu
-							each subMenu in item.sublinks
+							each subLink in item.sublinks
 								li.menu__item
-									a(href="#" class="menu__link")= subMenu
+									a(href="#" class="menu__link")= subLink
 		a.logo.sidebar_logo(href="#")
 			+iconPng('exel', 'sidebar_logo-icon')
 			span(class="sidebar_logo-title") Прайс-лист
